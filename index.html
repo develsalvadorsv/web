@@ -1,0 +1,239 @@
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DEV SV – Descargas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0c0c0f;
+      --card:#ffffff;
+      --text:#101114;
+      --muted:#c7c9d1;
+      --neon:#00f38d;
+      --neon-soft: rgba(0,243,141,.35);
+      --radius: 18px;
+      --gap: 26px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background: radial-gradient(1200px 800px at 10% 0%, rgba(0,243,141,.08), transparent 60%),
+                 radial-gradient(1000px 700px at 100% 100%, rgba(0,243,141,.06), transparent 55%),
+                 var(--bg);
+      color:#fff;
+      font-family:"Poppins", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      letter-spacing:.2px;
+      display:grid;
+      place-items:center;
+    }
+    .wrap{
+      width:min(720px, 92vw);
+      padding:48px 18px 64px;
+      position:relative;
+      text-align: center;
+    }
+    .wrap::before{
+      content:"";
+      position:absolute; inset:0;
+      border-radius:32px;
+      pointer-events:none;
+      box-shadow: 0 0 0 2px rgba(0,243,141,.09), 0 0 120px rgba(0,243,141,.08);
+    }
+
+    h1{
+      margin:0 0 28px;
+      font-size: clamp(28px, 5.2vw, 44px);
+      line-height:1.1;
+      font-weight:800;
+      text-shadow: 0 2px 0 rgba(0,0,0,.25);
+      display:flex; align-items:center; gap:12px;
+      justify-content: center;
+    }
+    .flag-icon{width:28px; height:28px;}
+    .stack{display:flex; flex-direction:column; gap:var(--gap);}
+    .btn-card{
+      position:relative;
+      display:flex; align-items:center; gap:18px;
+      padding:22px 22px;
+      border-radius: calc(var(--radius) + 4px);
+      background: linear-gradient(180deg, #fff, #f7f7fb);
+      color:var(--text);
+      text-decoration:none;
+      font-weight:700;
+      font-size: clamp(16px, 2.4vw, 20px);
+      box-shadow:
+        0 0 0 2px rgba(255,255,255,.5) inset,
+        0 2px 18px rgba(16,17,20,.25),
+        0 0 28px 2px var(--neon-soft);
+      transition: transform .14s ease, box-shadow .14s ease, filter .14s ease;
+    }
+    .btn-card:hover{
+      transform: translateY(-2px) scale(1.01);
+      box-shadow:
+        0 0 0 2px rgba(255,255,255,.6) inset,
+        0 8px 28px rgba(16,17,20,.35),
+        0 0 44px 6px var(--neon-soft);
+      filter: saturate(1.02);
+    }
+    .btn-card:active{transform: translateY(0) scale(.995)}
+    .badge{
+      position:absolute; inset:auto 18px -12px auto;
+      background: #0d1f17;
+      color:#bfffe6;
+      border:1px solid rgba(0,243,141,.35);
+      font-size:12px; padding:6px 10px; border-radius:999px;
+      letter-spacing:.3px; text-transform:uppercase;
+      box-shadow: 0 0 12px var(--neon-soft);
+    }
+    .icon{width:28px; height:28px; flex:0 0 28px; display:grid; place-items:center}
+    .icon img{width:100%; height:100%;}
+    .footer{
+      margin-top:34px; color:var(--muted); font-size:13px; text-align:center;
+    }
+    .brand{opacity:.9}
+    .btn-card::before{
+      content:""; position:absolute; inset:-2px; border-radius:inherit; z-index:-1;
+      background: radial-gradient(120px 60px at 8% 50%, var(--neon-soft), transparent 60%),
+                  radial-gradient(120px 60px at 92% 50%, var(--neon-soft), transparent 60%);
+      filter: blur(4px) saturate(1.3);
+      opacity:.7;
+    }
+    .sr-only{position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0}
+    .hidden{display:none;}
+  </style>
+</head>
+<body>
+  <!-- Página inicio -->
+  <main class="wrap" id="page1">
+    <h1>
+      <span class="brand">DEV SV</span>
+      <img src="https://subir-imagen.com/images/2025/08/19/el-salvador.png" alt="Icono de El Salvador" class="flag-icon" />
+    </h1>
+    <div class="stack">
+      <a class="btn-card" href="javascript:void(0)" onclick="goPage2()">
+        <span class="icon"><img src="https://subir-imagen.com/images/2025/08/19/apk.png" alt="Icono APK"></span>
+        <span>DESCARGAR TELEBLUE SV ANDROID</span>
+        <span class="badge">APK</span>
+      </a>
+      <a class="btn-card" href="javascript:void(0)" onclick="goPage3()">
+        <span class="icon"><img src="https://subir-imagen.com/images/2025/08/19/television.png" alt="Icono Televisión"></span>
+        <span>DESCARGAR TELEBLUE SV TV</span>
+      </a>
+      <a class="btn-card" href="javascript:void(0)" onclick="goPage4()">
+        <span class="icon"><img src="https://subir-imagen.com/images/2025/08/19/radio.png" alt="Icono Radio"></span>
+        <span>DESCARGAR TUNE SV</span>
+      </a>
+      <a class="btn-card" href="javascript:void(0)" onclick="openUrl('https://www.paypal.com/donate/?hosted_button_id=VRCWSM33X9EJJ')">
+        <span class="icon"><img src="https://subir-imagen.com/images/2025/08/19/paypal-1.png" alt="Icono PayPal"></span>
+        <span>APOYA A DEV SV</span>
+      </a>
+    </div>
+    <p class="footer">© <span id="y"></span> DEV SV — Todos los derechos reservados.</p>
+  </main>
+
+  <!-- Página TELEBLUE SV Android -->
+  <main class="wrap hidden" id="page2">
+    <h1>
+      <img src="https://subir-imagen.com/images/2025/08/08/Picsart_24-09-28_16-35-58-683.png" alt="Logo TELEBLUE SV" class="flag-icon" />
+      <span class="brand">TELEBLUE SV ANDROID</span>
+    </h1>
+    <div class="stack">
+      <a class="btn-card" href="javascript:void(0)" onclick="openUrl('TU_URL_GOOGLE_PLAY')">
+        <span class="icon"><img src="https://subir-imagen.com/images/2025/08/20/playstore.png" alt="Google Play"></span>
+        <span>Descargar Google Play</span>
+      </a>
+      <a class="btn-card" href="javascript:void(0)" onclick="openUrl('https://drive.google.com/file/d/1ZAOjOeloRxXXBky15V2zrYF8Dh6bBtvA/view?usp=sharing')">
+        <span class="icon"><img src="https://upload.wikimedia.org/wikipedia/commons/d/da/Google_Drive_logo.png" alt="Google Drive"></span>
+        <span>Descargar Google Drive</span>
+      </a>
+    </div>
+  </main>
+
+  <!-- Página TELEBLUE SV TV -->
+  <main class="wrap hidden" id="page3">
+    <h1>
+      <img src="https://subir-imagen.com/images/2025/08/08/Picsart_24-09-28_16-35-58-683.png" alt="Logo TELEBLUE SV TV" class="flag-icon" />
+      <span class="brand">TELEBLUE SV TV</span>
+    </h1>
+    <div class="stack">
+      <a class="btn-card" href="javascript:void(0)" onclick="openUrl('https://drive.google.com/file/d/1HEhzPejREED7t-w18Aq-ts2vhNaGnghD/view?usp=sharing')">
+        <span class="icon"><img src="https://subir-imagen.com/images/2025/08/20/download.png" alt="Descargar Directo"></span>
+        <span>Descargar directo</span>
+      </a>
+      <a class="btn-card" href="javascript:void(0)" onclick="goPage5()">
+        <span class="icon"><img src="/images/2025/08/20/unnamed.png" alt="Pasos TV"></span>
+        <span>Pasos para descargar en TV</span>
+      </a>
+    </div>
+  </main>
+
+  <!-- Página pasos TELEBLUE SV TV -->
+  <main class="wrap hidden" id="page5">
+    <h1>PASOS PARA DESCARGAR TELEBLUE SV TV</h1>
+    <div class="stack">
+      <div>
+        <h2>PASO 1</h2>
+        <p>Descarga la aplicación de Downloader en tu TV o TV BOX</p>
+        <img src="https://m.media-amazon.com/images/I/41Dpnwkv9AL.png" alt="Downloader TV" style="max-width:100%; border-radius:12px;">
+      </div>
+      <div>
+        <h2>PASO 2</h2>
+        <p>Entra a la aplicación Downloader en tu TV o TV BOX y en la categoría Home</p>
+        <img src="https://m.media-amazon.com/images/I/61ZM6y+T-fL.png" alt="Categoría Home" style="max-width:100%; border-radius:12px;">
+      </div>
+      <div>
+        <h2>PASO 3</h2>
+        <p>Ingresa el código 8811356 en el cuadrito y selecciona GO</p>
+        <img src="https://i0.wp.com/downloaderr.app/wp-content/uploads/2024/01/Downloader-codigo.webp?resize=800%2C450&ssl=1" alt="Código Downloader" style="max-width:100%; border-radius:12px;">
+      </div>
+    </div>
+  </main>
+
+  <!-- Página TUNE SV Android (duplicada) -->
+  <main class="wrap hidden" id="page4">
+    <h1>
+      <img src="https://subir-imagen.com/images/2025/08/19/radio.png" alt="Logo TUNE SV" class="flag-icon" />
+      <span class="brand">TUNE SV</span>
+    </h1>
+    <div class="stack">
+      <a class="btn-card" href="javascript:void(0)" onclick="openUrl('TU_URL_GOOGLE_PLAY_TUNE')">
+        <span class="icon"><img src="https://subir-imagen.com/images/2025/08/20/playstore.png" alt="Google Play"></span>
+        <span>Descargar Google Play</span>
+      </a>
+      <a class="btn-card" href="javascript:void(0)" onclick="openUrl('TU_URL_DRIVE_TUNE')">
+        <span class="icon"><img src="https://upload.wikimedia.org/wikipedia/commons/d/da/Google_Drive_logo.png" alt="Google Drive"></span>
+        <span>Descargar Google Drive</span>
+      </a>
+    </div>
+  </main>
+
+  <script>
+    document.getElementById('y').innerText = new Date().getFullYear();
+
+    function goPage2(){ showPage('page2'); }
+    function goPage3(){ showPage('page3'); }
+    function goPage4(){ showPage('page4'); }
+    function goPage5(){ showPage('page5'); }
+
+    function showPage(id){
+      const pages = document.querySelectorAll('main.wrap');
+      pages.forEach(p=>p.classList.add('hidden'));
+      document.getElementById(id).classList.remove('hidden');
+      window.scrollTo(0,0);
+    }
+
+    function openUrl(url){
+      if(url && !url.startsWith('TU_URL')){
+        window.open(url,'_blank');
+      } else {
+        alert('Aquí pon tu URL para el botón correspondiente');
+      }
+    }
+  </script>
+</body>
+</html>
+
